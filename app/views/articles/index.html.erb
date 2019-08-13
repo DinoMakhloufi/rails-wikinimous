@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+<h1>My articles</h1>
+<h2><%= link_to 'Create a new article', new_article_url  %></h2>
+<% @articles.each do |article| %>
+<h2><%= link_to article.title, article_path(article) %></h2>
+<p><%= article.content %></p>
+<%= link_to "Delete", article_path(article),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<% end %>
+  </div>
+</div>
